@@ -7,6 +7,7 @@ public class Employee implements Comparable<Employee> {
     private String name;
     private int age;
     private List<String> listOfCities;
+
     public Employee(String name, int age, List<String> listOfCities) {
         super();
 
@@ -48,5 +49,6 @@ public class Employee implements Comparable<Employee> {
     public int compareTo(Employee o) {
         return this.getName().compareTo(o.getName());
     }
+
 
 }

@@ -27,32 +27,31 @@ public class Solution {
                 .count();
     }
 
-    public  Optional<Employee> excercise3(List<Employee> employers) {
+    public  Employee excercise3(List<Employee> employers) {
         Optional<Employee> johns = employers.stream()
                 .filter(employee -> employee.getName().equalsIgnoreCase("John"))
                 .findAny();
-        return johns;
+        return johns.get();
     }
 
-    public static void excercise4(List<Employee> employers) {
+    public int excercise4(List<Employee> employers) {
         OptionalInt highestAge = employers.stream()
                 .mapToInt(Employee::getAge)
                 .max();
-        System.out.println(highestAge.getAsInt());
+        return (int) highestAge.getAsInt();
     }
 
-    public static void excercise5(List<Employee> employers) {
+    public List<Employee>  excercise5(List<Employee> employers) {
         List<Employee> sortedEmployers = employers.stream()
                 .sorted().collect(Collectors.toList());
-        sortedEmployers.forEach(System.out::println);
+        return sortedEmployers;
     }
 
-    public static void excercise6(List<Employee> employers) {
+    public String excercise6(List<Employee> employers) {
         List<String> listOfNames = employers.stream()
                 .map(Employee::getName)
                 .collect(Collectors.toList());
-        String result = String.join(",", listOfNames);
-        System.out.println(result);
+        return String.join(",", listOfNames);
     }
 
 
