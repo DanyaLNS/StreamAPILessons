@@ -9,7 +9,6 @@ public class Solution {
                 .filter(x -> x.getAge() > 30)
                 .map(Employee::getName)
                 .forEach(System.out::println);
-
     }
 
     public List<String> excercise1(List<Employee> employers) {
@@ -53,7 +52,4 @@ public class Solution {
                 .collect(Collectors.toList());
         return String.join(",", listOfNames);
     }
-
-
 }
-

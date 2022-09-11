@@ -20,24 +20,13 @@ public class Employee implements Comparable<Employee> {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getAge() {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     public List<String> getListOfCities() {
         return listOfCities;
-    }
-
-    public void setListOfCities(List<String> listOfCities) {
-        this.listOfCities = listOfCities;
     }
 
     @Override
@@ -50,5 +39,19 @@ public class Employee implements Comparable<Employee> {
         return this.getName().compareTo(o.getName());
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
 
+        if (!(o instanceof Employee)) {
+            return false;
+        }
+
+        Employee emp = (Employee) o;
+        return this.getName().equals(emp.getName()) &&
+                this.getAge() == emp.getAge() &&
+                this.getListOfCities().equals(emp.getListOfCities());
+    }
 }

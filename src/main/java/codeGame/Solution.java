@@ -27,5 +27,6 @@ public class Solution {
 
     public static void main(String[] args) {
         String[] example = {"sqweta", "asd", "asdzxcv", "as"};
+        System.out.println(getTotalNumberOfLettersOfNamesLongerThanFive(example));
     }
 }
